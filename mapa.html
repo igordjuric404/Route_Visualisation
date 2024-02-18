@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Distance Calculator</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.css"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="navbar">
+      <a href="pocetna.html">Početna</a>
+      <a href="mapa.html">Mapa centara</a>
+    </div>
+    <div class="container">
+      <h1>Reciklažni centri</h1>
+      <div class="address-search">
+        <label for="address">Vaša adresa:</label>
+        <input type="text" id="address" />
+        <button onclick="findNearestAndPlotRoute()">
+          Pronađi najbliži centar
+        </button>
+      </div>
+      <div class="checkboxes">
+        <p>Izaberite vrstu otpada:</p>
+        <input
+          type="checkbox"
+          id="papirCheckbox"
+          onchange="filterWaypoints()"
+        />
+        <label for="papirCheckbox">Papir</label>
+        <input
+          type="checkbox"
+          id="plastikaCheckbox"
+          onchange="filterWaypoints()"
+        />
+        <label for="plastikaCheckbox">Plastika</label>
+        <input
+          type="checkbox"
+          id="metalCheckbox"
+          onchange="filterWaypoints()"
+        />
+        <label for="metalCheckbox">Metal</label>
+      </div>
+      <div id="mapid"></div>
+    </div>
+  </body>
+</html>
